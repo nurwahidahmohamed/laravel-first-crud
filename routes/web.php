@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\InventoryController;
 
 
@@ -16,4 +17,4 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/inventories', [InventoryController::class, 'index']);
 
 
-
+Route::get('/vehicles', [VehicleController::class, 'index']);
