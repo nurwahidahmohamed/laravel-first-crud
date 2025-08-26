@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('vehicles', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name');
-            $table->string('color');
-            $table->string('plate_number');
+            $table->string('make');
+            $table->string('model');
+            $table->string('year');
+            $table->string('serial_no');
         });
     }
 

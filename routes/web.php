@@ -15,6 +15,6 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/inventories', [InventoryController::class, 'index']);
-
+Route::get('/inventories/create', [InventoryController::class, 'create']);
 
 Route::get('/vehicles', [VehicleController::class, 'index']);
