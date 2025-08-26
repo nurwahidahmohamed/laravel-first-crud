@@ -16,6 +16,7 @@
                                 <th>Quantity</th>
                                 <th>Price</th>
                                 <th>Serial No</th>
+                                <th>Tindakan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -26,6 +27,7 @@
                                 <td>{{ $inventory->quantity }}</td>
                                 <td>{{ $inventory->price }}</td>
                                 <td>{{ $inventory->serial_no }}</td>
+                                <td><a href="{{ route('inventories.show', $inventory->id) }}" class="btn btn-info btn-sm">Lihat</a></td>
 
                                 {{-- <td>
                                     <a href="{{ route('inventories.show', $inventory->id) }}" class="btn btn-info btn-sm">View</a>
