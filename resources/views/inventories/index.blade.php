@@ -45,15 +45,7 @@
 
                                 </td>
 
-                                {{-- <td>
-                                    <a href="{{ route('inventories.show', $inventory->id) }}" class="btn btn-info btn-sm">View</a>
-                                    <a href="{{ route('inventories.edit', $inventory->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                    <form action="{{ route('inventories.destroy', $inventory->id) }}" method="POST" style="display:inline;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
-                                    </form>
-                                </td> --}}
+
                             </tr>
                             @endforeach
                         </tbody>

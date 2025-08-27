@@ -8,6 +8,10 @@ use App\Models\Vehicle;
 
 class VehicleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         // query all vehicles from the table 'vehicles' using model
@@ -31,6 +35,7 @@ class VehicleController extends Controller
         $vehicle->model = $request->input('model');
         $vehicle->year = $request->input('year');
         $vehicle->chassis_no = $request->input('chassis_no');
+        $vehicle->user_id = auth()->user()->id; //assign the logged in user id
         $vehicle->save();
 
        //returs to vehicle index

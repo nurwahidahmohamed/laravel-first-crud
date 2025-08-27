@@ -16,4 +16,10 @@ class Inventory extends Model
         return $this->belongsTo(User::class);
     }
 
+    //getter make sure title uppercase
+    public function getNameAttribute($value)
+    {
+        return strtoupper($value);
+    }
+
 }
