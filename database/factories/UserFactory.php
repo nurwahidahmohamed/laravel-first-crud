@@ -29,6 +29,7 @@ class UserFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
+            'ic_no' => $faker->myKadNumber(), //Generate a unique IC number with 10 digits
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
         ];

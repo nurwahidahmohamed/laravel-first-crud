@@ -38,6 +38,18 @@
                                 @enderror
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <label for="ic_no" class="col-md-4 col-form-label text-md-end">{{ __('IC No') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="ic_no" type="text" class="form-control @error('ic_no') is-invalid @enderror" name="ic_no" value="{{ old('ic_no') }}" required autocomplete="ic_no" autofocus>
+
+                                @error('ic_no')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>

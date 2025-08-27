@@ -22,6 +22,7 @@
                                 <th>Price</th>
                                 <th>Serial No</th>
                                 <th>User</th>
+                                <th>IC No</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -34,6 +35,7 @@
                                 <td>{{ $inventory->price }}</td>
                                 <td>{{ $inventory->serial_no }}</td>
                                 <td>{{ $inventory->user->name }}</td>
+                                <td>{{ $inventory->user->ic_no }} - {{ $inventory->user->gender }} - {{ $inventory->user->age }}</td>
                                 <td>
                                     <a href="{{ route('inventories.show', $inventory->id) }}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
                                     <a href="{{ route('inventories.edit', $inventory->id) }}" class="btn btn-secondary btn-sm"><i class="bi bi-pen"></i></i></a>

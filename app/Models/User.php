@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'ic_no'
     ];
 
     /**
@@ -55,5 +56,36 @@ class User extends Authenticatable
     public function vehicles()
     {
         return $this->hasMany(Vehicle::class);
+    }
+
+    // $user->gender
+    public function getGenderAttribute()
+    {
+        $ic_no = $this->ic_no;
+
+        // Check the 11th digit of the IC number
+        if (isset($ic_no[11])) {
+            return $ic_no[11] % 2 === 0 ? 'Female' : 'Male';
+        }
+
+        return 'Unknown';
+    }
+
+    // get age from ic_no, the first two is the year, example 80 is 1980
+    public function getAgeAttribute()
+    {
+        $ic_no = $this->ic_no;
+
+        if (isset($ic_no[0]) && isset($ic_no[1])) {
+            $year = (int)substr($ic_no, 0, 2);
+            $currentYear = (int)date('y');
+
+            // Determine the full year (1900s or 2000s)
+            $fullYear = $year <= $currentYear ? 2000 + $year : 1900 + $year;
+
+            return date('Y') - $fullYear;
+        }
+
+        return null; // Return null if IC number is not valid
     }
 }
