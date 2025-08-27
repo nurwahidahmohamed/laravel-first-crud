@@ -22,6 +22,7 @@
                                 <th>Model</th>
                                 <th>Year</th>
                                 <th>Chassis No</th>
+                                <th>User</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -33,6 +34,7 @@
                                 <td>{{ $vehicle->model }}</td>
                                 <td>{{ $vehicle->year }}</td>
                                 <td>{{ $vehicle->chassis_no }}</td>
+                                <td>{{ $vehicle->user->name }}</td>
                                 <td>
                                     <a href="{{ route('vehicles.show', $vehicle->id) }}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
                                     <a href="{{ route('vehicles.edit', $vehicle->id) }}" class="btn btn-secondary btn-sm"><i class="bi bi-pen"></i></i></a>

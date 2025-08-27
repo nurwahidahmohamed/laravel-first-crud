@@ -7,6 +7,11 @@ use App\Models\Inventory;
 
 class InventoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         // query all inventories from the table 'inventories' using model
@@ -30,6 +35,7 @@ class InventoryController extends Controller
         $inventory->quantity = $request->input('quantity');
         $inventory->price = $request->input('price');
         $inventory->serial_no = $request->input('serial_no');
+        $inventory->user_id = auth()->user()->id; //assign the logged in user id
         $inventory->save();
 
        //returs to inventory index

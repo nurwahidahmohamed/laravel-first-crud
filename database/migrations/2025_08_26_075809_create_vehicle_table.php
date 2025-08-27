@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('model');
             $table->string('year');
             $table->string('chassis_no');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
         });
     }
 
