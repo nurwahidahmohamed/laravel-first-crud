@@ -24,6 +24,7 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $faker = \Faker\Factory::create('ms_MY'); //Create a Faker instance for Malaysian locale
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),

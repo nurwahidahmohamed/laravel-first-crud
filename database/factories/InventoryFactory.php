@@ -24,6 +24,7 @@ class InventoryFactory extends Factory
             'quantity' => $this->faker->numberBetween(1, 100),
             'price' => $this->faker->randomFloat(2, 1, 1000),
             'serial_no' => $this->faker->unique()->bothify('SN-??-########'),
+            'user_id' => \App\Models\User::factory(),
         ];
     }
 }

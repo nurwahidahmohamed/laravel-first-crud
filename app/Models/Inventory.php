@@ -10,7 +10,10 @@ class Inventory extends Model
     //
     Use HasFactory;
 
-
-
+    //define relationship dengan user
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
 }

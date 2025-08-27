@@ -45,4 +45,10 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    //buat function relationship kepada inventory
+    public function inventories()
+    {
+        return $this->hasMany(Inventory::class);
+    }
 }
