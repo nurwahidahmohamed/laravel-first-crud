@@ -27,6 +27,7 @@
         "ansi-regex": "^5.0.1",
         "ansi-styles": "^4.3.0",
         "asynckit": "^0.4.0",
+        "bootstrap-icons": "^1.13.1",
         "braces": "^3.0.3",
         "call-bind-apply-helpers": "^1.0.2",
         "chalk": "^4.1.2",

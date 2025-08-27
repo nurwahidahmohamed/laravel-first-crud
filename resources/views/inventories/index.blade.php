@@ -16,7 +16,7 @@
                                 <th>Quantity</th>
                                 <th>Price</th>
                                 <th>Serial No</th>
-                                <th>Tindakan</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>

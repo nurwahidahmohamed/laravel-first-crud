@@ -38,7 +38,7 @@
                         </tbody>
 
                 </div>
-                <td><a href="{{ route('inventories.create') }}" class="btn btn-info btn-sm">Kembali</a></td>
+                <td><a href="{{ route('inventories.index') }}" class="btn btn-info btn-sm">Kembali</a></td>
             </div>
         </div>
     </div>
