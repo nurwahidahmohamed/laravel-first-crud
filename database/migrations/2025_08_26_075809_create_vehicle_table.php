@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('make');
             $table->string('model');
             $table->string('year');
-            $table->string('serial_no');
+            $table->string('chassis_no');
         });
     }
 

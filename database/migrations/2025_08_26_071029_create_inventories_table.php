@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('quantity');
-            $table->decimal('price');
+            $table->decimal('price')->nullable();
             $table->string('serial_no')->nullable();
             $table->timestamps();
         });

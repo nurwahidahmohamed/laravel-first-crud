@@ -40,4 +40,29 @@ class InventoryController extends Controller
     {
         return view('inventories.show', compact('inventory'));
     }
+
+    public function edit(Inventory $inventory)
+    {
+        return view('inventories.edit', compact('inventory'));
+    }
+
+    public function update(Request $request, Inventory $inventory)
+    {
+        //update using model
+
+        $inventory->name = $request->name;
+        $inventory->quantity = $request->quantity;
+        $inventory->price = $request->price;
+        $inventory->serial_no = $request->serial_no;
+        $inventory->save();
+
+        //return to inventory index
+        return redirect()->route('inventories.index');
+    }
+
+    public function destroy(Inventory $inventory)
+    {
+        $inventory->delete();
+        return redirect()->route('inventories.index');
+    }
 }

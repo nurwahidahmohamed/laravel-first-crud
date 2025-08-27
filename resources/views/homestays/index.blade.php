@@ -5,7 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Homestays Index') }}</div>
+                <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>{{ __('Homestays Index') }}</span>
+                        <a href="{{ route('homestays.create') }}" class="btn btn-success btn-sm">
+                            <i class="bi bi-plus-lg"></i>
+                        </a>
+                    </div>
+
 
                 <div class="card-body">
                     <table class="table">
@@ -20,7 +26,7 @@
                                 <th>Catatan</th>
                                 <th>Insurans</th>
                                 <th>Pakej Produk</th>
-                                <th>Tindakan</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,17 +41,16 @@
                                 <td>{{ $homestay->catatan }}</td>
                                 <td>{{ $homestay->insurans }}</td>
                                 <td>{{ $homestay->pakej_produk }}</td>
-                                <td><a href="{{ route('homestays.show', $homestay->id) }}" class="btn btn-info btn-sm">Lihat</a></td>
-
-                                {{-- <td>
-                                    <a href="{{ route('inventories.show', $inventory->id) }}" class="btn btn-info btn-sm">View</a>
-                                    <a href="{{ route('inventories.edit', $inventory->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                    <form action="{{ route('inventories.destroy', $inventory->id) }}" method="POST" style="display:inline;">
+                                <td>
+                                    <a href="{{ route('homestays.show', $homestay->id) }}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                    <a href="{{ route('homestays.edit', $homestay->id) }}" class="btn btn-secondary btn-sm"><i class="bi bi-pen"></i></a>
+                                    <form action="{{ route('homestays.destroy', $homestay->id) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="bi bi-trash"></i></button>
                                     </form>
-                                </td> --}}
+
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

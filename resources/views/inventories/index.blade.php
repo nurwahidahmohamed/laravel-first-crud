@@ -5,7 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Inventories Index') }}</div>
+                <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>{{ __('Inventories Index') }}</span>
+                        <a href="{{ route('inventories.create') }}" class="btn btn-success btn-sm">
+                            <i class="bi bi-plus-lg"></i>
+                        </a>
+                    </div>
 
                 <div class="card-body">
                     <table class="table">
@@ -27,7 +32,16 @@
                                 <td>{{ $inventory->quantity }}</td>
                                 <td>{{ $inventory->price }}</td>
                                 <td>{{ $inventory->serial_no }}</td>
-                                <td><a href="{{ route('inventories.show', $inventory->id) }}" class="btn btn-info btn-sm">Lihat</a></td>
+                                <td>
+                                    <a href="{{ route('inventories.show', $inventory->id) }}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
+                                    <a href="{{ route('inventories.edit', $inventory->id) }}" class="btn btn-secondary btn-sm"><i class="bi bi-pen"></i></i></a>
+                                    <form action="{{ route('inventories.destroy', $inventory->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="bi bi-trash"></i></button>
+                                    </form>
+
+                                </td>
 
                                 {{-- <td>
                                     <a href="{{ route('inventories.show', $inventory->id) }}" class="btn btn-info btn-sm">View</a>
