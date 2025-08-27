@@ -22,4 +22,10 @@ class Inventory extends Model
         return strtoupper($value);
     }
 
+    //setter make sure user insert semua UPPER CASE
+    public function setNameAttribute($value)
+    {
+        $this->attributes['name'] = strtoupper($value);
+    }
+
 }
