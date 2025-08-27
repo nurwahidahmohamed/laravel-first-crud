@@ -3,12 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Inventory extends Model
 {
     //
     Use HasFactory;
+    //softdelete
+    Use SoftDeletes;
 
     //define relationship dengan user
     public function user()

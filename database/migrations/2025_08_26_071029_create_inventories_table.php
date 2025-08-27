@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('serial_no')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
+            //soft delete
+            $table->softDeletes();
         });
     }
 
