@@ -15,7 +15,7 @@ class VehicleController extends Controller
     public function index()
     {
         // query all vehicles from the table 'vehicles' using model
-        $vehicles = Vehicle::all();
+        $vehicles = Vehicle::latest()->get();
 
         // return to view with $vehicles (resources/views/vehicles/index.blade.php)
         return view('vehicles.index', compact('vehicles'));
