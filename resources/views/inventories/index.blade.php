@@ -43,10 +43,13 @@
                                     @can('update', $inventory)
                                     <a href="{{ route('inventories.edit', $inventory->id) }}" class="btn btn-secondary btn-sm"><i class="bi bi-pen"></i></i></a>
                                     @endcan
+                                    @can('delete', $inventory)
                                     <form action="{{ route('inventories.destroy', $inventory->id) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')"><i class="bi bi-trash"></i></button>
+                                    </form>
+                                    @endcan
                                     </form>
 
                                 </td>
