@@ -20,6 +20,8 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>IC No</th>
+                                <th>Gender</th>
+                                <th>Age</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -30,6 +32,8 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->ic_no }}</td>
+                                <td>{{ $user->gender }}</td>
+                                <td>{{ $user->age }}</td>
                                 <td>
                                     <a href="{{ route('users.show', $user->id) }}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
                                     <a href="{{ route('users.edit', $user->id) }}" class="btn btn-secondary btn-sm"><i class="bi bi-pen"></i></a>
