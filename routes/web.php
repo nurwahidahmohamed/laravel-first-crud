@@ -8,9 +8,7 @@ use App\Http\Controllers\HomestayController;
 use App\Http\Controllers\InventoryController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/home');
 
 Auth::routes();
 
