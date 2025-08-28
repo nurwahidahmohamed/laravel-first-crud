@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\APIPostController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\HomestayController;
 use App\Http\Controllers\InventoryController;
@@ -46,3 +47,6 @@ Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show')
 Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::post('/users/{user}/edit', [UserController::class, 'update'])->name('users.update');
 Route::delete('/users/destroy/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+
+//buat APIPostController untuk notification
+Route::get('/posts', [APIPostController::class, 'index'])->name('posts.index');
