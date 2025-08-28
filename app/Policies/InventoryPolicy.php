@@ -46,7 +46,7 @@ class InventoryPolicy
      */
     public function delete(User $user, Inventory $inventory): bool
     {
-        return $user->id === $inventory->user_id;
+        return $user->role == 'admin' || $user->id === $inventory->user_id;
     }
 
     /**
