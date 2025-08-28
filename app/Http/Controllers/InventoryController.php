@@ -52,6 +52,7 @@ class InventoryController extends Controller
 
     public function edit(Inventory $inventory)
     {
+        $this->authorize('update', $inventory);
         return view('inventories.edit', compact('inventory'));
     }
 

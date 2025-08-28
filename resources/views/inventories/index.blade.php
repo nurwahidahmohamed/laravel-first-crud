@@ -40,8 +40,9 @@
                                     @can('view', $inventory)
                                     <a href="{{ route('inventories.show', $inventory->id) }}" class="btn btn-info btn-sm"><i class="bi bi-eye"></i></a>
                                     @endcan
-
+                                    @can('update', $inventory)
                                     <a href="{{ route('inventories.edit', $inventory->id) }}" class="btn btn-secondary btn-sm"><i class="bi bi-pen"></i></i></a>
+                                    @endcan
                                     <form action="{{ route('inventories.destroy', $inventory->id) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
