@@ -37,7 +37,9 @@
                             <a class="nav-link" href="{{ route('vehicles.index') }}">{{ __('Vehicles') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('homestays.index') }}">{{ __('Homestays') }}</a>
+                            <a class="nav-link" href="{{ route('users.index') }}">{{ __('Users') }}</a>
+                        </li>
+
 
                     </ul>
 
@@ -63,6 +65,8 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

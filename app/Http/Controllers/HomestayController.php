@@ -26,16 +26,8 @@ class HomestayController extends Controller
 
         //POPO - Plain Old PHP Object
         $homestay = new Homestay();
-        $homestay->nama_pengusaha = $request->input('nama_pengusaha');
-        $homestay->jantina = $request->input('jantina');
-        $homestay->no_kp = $request->input('no_kp');
-        $homestay->no_tel = $request->input('no_tel');
-        $homestay->alamat = $request->input('alamat');
-        $homestay->jumlah_bilik = $request->input('jumlah_bilik');
-        $homestay->catatan = $request->input('catatan');
-        $homestay->insurans = $request->input('insurans');
-        $homestay->pakej_produk = $request->input('pakej_produk');
-        $homestay->save();
+        $homestay->kluster = $request->input('kluster');
+
 
         //returs to homestay index
         return redirect('/homestays');
